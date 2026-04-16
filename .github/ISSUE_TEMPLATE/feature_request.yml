@@ -1,0 +1,49 @@
+name: Feature Request
+description: Suggest a new feature or improvement for Mouse
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a feature! We read every request.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or Use Case
+      description: What problem does this feature solve? What are you trying to do?
+      placeholder: "I'm trying to... but currently..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: How would you like this to work?
+      placeholder: "It would be great if Mouse could..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Have you tried any workarounds?
+    validations:
+      required: false
+
+  - type: dropdown
+    id: ai-assistant
+    attributes:
+      label: AI Assistant
+      description: Which AI assistant are you using? (Helps us prioritize compatibility)
+      options:
+        - GitHub Copilot
+        - Claude Code
+        - Cursor
+        - Other
+        - N/A
+    validations:
+      required: false

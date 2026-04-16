@@ -1,0 +1,93 @@
+name: Bug Report
+description: Report a bug in Mouse
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug. Please fill out the information below to help us investigate.
+
+        **Important:** Do not include API keys, license keys, passwords, or other sensitive information in this report.
+
+  - type: input
+    id: version
+    attributes:
+      label: Mouse Version
+      description: "Find this in VS Code: Extensions → Mouse → version number"
+      placeholder: "e.g., 0.10.33"
+    validations:
+      required: true
+
+  - type: input
+    id: vscode-version
+    attributes:
+      label: VS Code Version
+      description: "Find this in VS Code: Help → About"
+      placeholder: "e.g., 1.96.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: ai-assistant
+    attributes:
+      label: AI Assistant
+      description: Which AI coding assistant are you using with Mouse?
+      options:
+        - GitHub Copilot
+        - Claude Code
+        - Cursor
+        - Other (specify in description)
+    validations:
+      required: true
+
+  - type: input
+    id: ai-assistant-version
+    attributes:
+      label: AI Assistant Version
+      description: Version of your AI coding assistant (if known)
+      placeholder: "e.g., Copilot Chat 0.24.0, Claude Code 1.2.0"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating System
+      options:
+        - Windows
+        - macOS
+        - Linux
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: A clear description of the bug.
+      placeholder: "What happened? What did you expect to happen?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: How can we reproduce this bug?
+      placeholder: |
+        1. Open a file...
+        2. Ask the AI to...
+        3. Mouse attempts to...
+        4. Error occurs...
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant Log Output
+      description: "Check Output panel → Mouse channel for any error messages. **Do not include sensitive information.**"
+      render: shell
+    validations:
+      required: false

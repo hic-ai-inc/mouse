@@ -6,44 +6,54 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for suggesting a feature! We read every request.
+        We'd love to hear your ideas for making Mouse better. Please describe what you'd like and why it matters to your workflow.
 
   - type: textarea
     id: problem
     attributes:
-      label: Problem or Use Case
-      description: What problem does this feature solve? What are you trying to do?
-      placeholder: "I'm trying to... but currently..."
+      label: What problem does this solve?
+      description: Describe the pain point or limitation you're running into.
+      placeholder: "I frequently need to... but currently..."
     validations:
       required: true
 
   - type: textarea
     id: solution
     attributes:
-      label: Proposed Solution
-      description: How would you like this to work?
+      label: Proposed solution
+      description: How do you think this should work? Be as specific or as general as you'd like.
       placeholder: "It would be great if Mouse could..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Which area does this relate to?
+      options:
+        - File editing (quick_edit, batch_quick_edit)
+        - File navigation (read_lines, find_in_file, jump_to_line_n)
+        - New tool idea
+        - Performance
+        - Compatibility (new IDE or AI client)
+        - Documentation
+        - Licensing / billing
+        - Other
     validations:
       required: true
 
   - type: textarea
     id: alternatives
     attributes:
-      label: Alternatives Considered
-      description: Have you tried any workarounds?
+      label: Alternatives considered
+      description: Have you tried any workarounds? Are there other tools that handle this well?
     validations:
       required: false
 
-  - type: dropdown
-    id: ai-assistant
+  - type: textarea
+    id: context
     attributes:
-      label: AI Assistant
-      description: Which AI assistant are you using? (Helps us prioritize compatibility)
-      options:
-        - GitHub Copilot
-        - Claude Code
-        - Cursor
-        - Other
-        - N/A
+      label: Additional context
+      description: Anything else — screenshots, examples, links to related issues.
     validations:
       required: false

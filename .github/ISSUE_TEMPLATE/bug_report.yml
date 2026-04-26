@@ -1,72 +1,50 @@
 name: Bug Report
-description: Report a bug in Mouse
+description: Report a bug or unexpected behavior in Mouse
 title: "[Bug]: "
-labels: ["bug"]
+labels: ["bug", "triage"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to report a bug. Please fill out the information below to help us investigate.
-
-        **Important:** Do not include API keys, license keys, passwords, or other sensitive information in this report.
+        Thanks for taking the time to report a bug. Please fill out the sections below so we can reproduce and fix the issue.
 
   - type: input
-    id: version
+    id: mouse-version
     attributes:
       label: Mouse Version
-      description: "Find this in VS Code: Extensions → Mouse → version number"
-      placeholder: "e.g., 0.10.33"
-    validations:
-      required: true
-
-  - type: input
-    id: vscode-version
-    attributes:
-      label: VS Code Version
-      description: "Find this in VS Code: Help → About"
-      placeholder: "e.g., 1.96.0"
+      description: "Run `Mouse: Show Version` from the Command Palette, or check the Extensions panel."
+      placeholder: "e.g., 0.10.10"
     validations:
       required: true
 
   - type: dropdown
-    id: ai-assistant
+    id: ide
     attributes:
-      label: AI Assistant
-      description: Which AI coding assistant are you using with Mouse?
+      label: IDE / Client
+      description: Which editor or AI client are you using Mouse with?
       options:
-        - GitHub Copilot
-        - Claude Code
+        - VS Code + GitHub Copilot
         - Cursor
-        - Other (specify in description)
+        - Kiro
+        - Claude Code (CLI)
+        - Other (specify below)
     validations:
       required: true
 
   - type: input
-    id: ai-assistant-version
-    attributes:
-      label: AI Assistant Version
-      description: Version of your AI coding assistant (if known)
-      placeholder: "e.g., Copilot Chat 0.24.0, Claude Code 1.2.0"
-    validations:
-      required: false
-
-  - type: dropdown
     id: os
     attributes:
       label: Operating System
-      options:
-        - Windows
-        - macOS
-        - Linux
+      placeholder: "e.g., Windows 11, macOS 15.2, Ubuntu 24.04"
     validations:
       required: true
 
   - type: textarea
     id: description
     attributes:
-      label: Description
-      description: A clear description of the bug.
-      placeholder: "What happened? What did you expect to happen?"
+      label: What happened?
+      description: A clear description of the bug. What did you expect to happen, and what actually happened?
+      placeholder: "When I tried to... I expected... but instead..."
     validations:
       required: true
 
@@ -74,12 +52,11 @@ body:
     id: steps
     attributes:
       label: Steps to Reproduce
-      description: How can we reproduce this bug?
+      description: Minimal steps to reproduce the behavior.
       placeholder: |
         1. Open a file...
-        2. Ask the AI to...
-        3. Mouse attempts to...
-        4. Error occurs...
+        2. Run the tool...
+        3. See error...
     validations:
       required: true
 
@@ -87,7 +64,15 @@ body:
     id: logs
     attributes:
       label: Relevant Log Output
-      description: "Check Output panel → Mouse channel for any error messages. **Do not include sensitive information.**"
+      description: "Paste any relevant output from the Mouse output channel (View → Output → Mouse)."
       render: shell
+    validations:
+      required: false
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context
+      description: Anything else that might help — screenshots, file types involved, workspace size, etc.
     validations:
       required: false

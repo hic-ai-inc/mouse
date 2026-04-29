@@ -2,7 +2,7 @@
 
 ## Reporting a Vulnerability
 
-If you discover a security vulnerability in Mouse, please report it responsibly.
+If you discover a security vulnerability in HIC Mouse, please report it responsibly.
 
 **Do NOT open a public GitHub issue for security vulnerabilities.**
 
@@ -29,9 +29,9 @@ If you discover a security vulnerability in Mouse, please report it responsibly.
 ### Scope
 
 This policy covers:
-- The Mouse VS Code extension (`hic-ai.mouse`)
-- The Mouse MCP server
-- The Mouse licensing system
+- The HIC Mouse VS Code extension (`hic-ai.mouse`)
+- The HIC Mouse MCP server
+- The HIC Mouse licensing system
 - The hic-ai.com website and API
 
 Out of scope:

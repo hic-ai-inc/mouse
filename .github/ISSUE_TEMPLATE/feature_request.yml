@@ -1,5 +1,5 @@
 name: Feature Request
-description: Suggest a new feature or improvement for Mouse
+description: Suggest a new feature or improvement for HIC Mouse
 title: "[Feature]: "
 labels: ["enhancement"]
 body:
@@ -11,17 +11,17 @@ body:
   - type: textarea
     id: problem
     attributes:
-      label: What problem does this solve?
-      description: Describe the pain point or limitation you're running into.
-      placeholder: "I frequently need to... but currently..."
+      label: Problem or Use Case
+      description: What problem does this feature solve? What are you trying to do?
+      placeholder: "I'm trying to... but currently..."
     validations:
       required: true
 
   - type: textarea
     id: solution
     attributes:
-      label: Proposed solution
-      description: How do you think this should work? Be as specific or as general as you'd like.
+      label: Proposed Solution
+      description: How would you like this to work?
       placeholder: "It would be great if Mouse could..."
     validations:
       required: true
@@ -45,15 +45,21 @@ body:
   - type: textarea
     id: alternatives
     attributes:
-      label: Alternatives considered
-      description: Have you tried any workarounds? Are there other tools that handle this well?
+      label: Alternatives Considered
+      description: Have you tried any workarounds?
     validations:
       required: false
 
-  - type: textarea
-    id: context
+  - type: dropdown
+    id: ai-assistant
     attributes:
-      label: Additional context
-      description: Anything else — screenshots, examples, links to related issues.
+      label: AI Assistant
+      description: Which AI assistant are you using with HIC Mouse? (Helps us prioritize compatibility)
+      options:
+        - GitHub Copilot
+        - Claude Code
+        - Cursor
+        - Other
+        - N/A
     validations:
       required: false

@@ -1,6 +1,6 @@
-# Mouse — Precision Editing Tools for AI Coding Agents
+# HIC Mouse — Precision Editing Tools for AI Coding Agents
 
-Mouse gives your AI coding assistant surgical precision for file editing. Instead of rewriting entire files, your AI uses Mouse's tools to make targeted, line-level changes — faster, safer, and more accurate.
+HIC Mouse gives your AI coding assistant surgical precision for file editing. Instead of rewriting entire files, your AI uses Mouse's tools to make targeted, line-level changes — faster, safer, and more accurate.
 
 **Works with:** GitHub Copilot, Claude Code, Cursor, and other MCP-compatible AI coding assistants.
 
@@ -39,7 +39,7 @@ Full setup guide: [https://hic-ai.com/docs/installation](https://hic-ai.com/docs
 
 ## Pricing
 
-Mouse includes a **14-day free trial** — no account or credit card required. After the trial, choose a plan at [hic-ai.com/pricing](https://hic-ai.com/pricing).
+HIC Mouse includes a **14-day free trial** — no account or credit card required. After the trial, choose a plan at [hic-ai.com/pricing](https://hic-ai.com/pricing).
 
 ## Links
 
@@ -55,6 +55,6 @@ To verify the integrity of a downloaded `.vsix` file, see [VERIFICATION.md](VERI
 
 ## License
 
-Mouse is proprietary software. See [LICENSE](LICENSE) for terms.
+HIC Mouse is proprietary software. See [LICENSE](LICENSE) for terms.
 
 © 2026 HIC AI, Inc. All rights reserved.

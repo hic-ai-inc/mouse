@@ -1,6 +1,6 @@
 # VSIX Integrity Verification
 
-This document explains how to verify that a Mouse `.vsix` file is authentic and has not been tampered with.
+This document explains how to verify that a HIC Mouse `.vsix` file is authentic and has not been tampered with.
 
 ## Method 1: Install from a Registry (Recommended)
 
@@ -14,7 +14,7 @@ The VS Code Marketplace performs repository signing on all extensions. VS Code a
 
 **Cursor / other Open VSX clients:**
 
-Install Mouse from the Open VSX registry through your editor's built-in extension manager. Open VSX maintains its own publisher verification and repository signing mechanism. Extensions are verified automatically on install — no manual steps required.
+Install HIC Mouse by HIC AI, Inc. from the Open VSX registry through your editor's built-in extension manager. Open VSX maintains its own publisher verification and repository signing mechanism. Extensions are verified automatically on install — no manual steps required.
 
 ## Method 2: Verify SHA-256 Checksum
 

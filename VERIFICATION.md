@@ -42,19 +42,16 @@ shasum -a 256 mouse-X.Y.Z.vsix
 Get-FileHash mouse-X.Y.Z.vsix -Algorithm SHA256
 ```
 
-### Step 3: Compare
+## Method 3: SLSA Provenance (Planned)
 
-The output hash should exactly match the corresponding line in `checksums.sha256`. If it does not match, do not install the file — it may have been tampered with.
+SLSA provenance attestation is not yet available for HIC Mouse releases. GitHub Artifact Attestations (used for SLSA provenance) require GitHub Enterprise Cloud for private repository workflows. Since the Mouse build pipeline runs in a private repository, attestations cannot currently be generated.
 
-## Method 3: Verify SLSA Provenance (Advanced)
+We plan to implement attestation in a future release. In the meantime, Methods 1 and 2 above provide strong integrity guarantees:
 
-Once SLSA provenance attestation is available, you can verify the build provenance:
+- **Registry signing** (Method 1) cryptographically verifies that the extension was published by the verified `hic-ai` publisher account
+- **SHA-256 checksums** (Method 2) verify that a directly downloaded `.vsix` file has not been modified since the official build
 
-```bash
-gh attestation verify mouse-X.Y.Z.vsix --owner hic-ai-inc
-```
-
-This cryptographically proves the `.vsix` was built by the official GitHub Actions workflow from a specific source commit.
+For details on this limitation, please contact [security@hic-ai.com](mailto:security@hic-ai.com).
 
 ## Questions?
 

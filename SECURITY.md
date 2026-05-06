@@ -21,8 +21,8 @@ If you discover a security vulnerability in HIC Mouse, please report it responsi
 
 ### What to Expect
 
-- **Acknowledgment:** Within 2 business days
-- **Initial assessment:** Within 5 business days
+- **Acknowledgment:** Within 24 hours
+- **Initial assessment:** Within 3 business days
 - **Resolution target:** Critical vulnerabilities within 14 days; others within 30 days
 - **Credit:** We will credit reporters in release notes (unless you prefer anonymity)
 
@@ -32,12 +32,13 @@ This policy covers:
 - The HIC Mouse VS Code extension (`hic-ai.mouse`)
 - The HIC Mouse MCP server
 - The HIC Mouse licensing system
-- The hic-ai.com website and API
 
 Out of scope:
 - Third-party dependencies (report to the upstream maintainer)
 - Social engineering attacks
 - Denial of service attacks against hic-ai.com
+
+Website, API, account, billing, and license-service vulnerabilities should be reported by email to security@hic-ai.com rather than through GitHub Security Advisories.
 
 ## Supported Versions
 
@@ -53,3 +54,7 @@ Out of scope:
 - The VS Code Marketplace performs repository signing and malware scanning
 - GitHub Actions workflows use SHA-pinned action references
 - No secrets or credentials are included in distributed artifacts
+
+## Privacy
+
+Mouse runs entirely locally. No source code, file contents, or workspace data is transmitted to HIC AI or any third party. The only network communication is license validation (heartbeat), which transmits only a machine identifier and license status.

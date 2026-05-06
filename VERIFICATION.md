@@ -20,15 +20,15 @@ Install HIC Mouse by HIC AI, Inc. from the Open VSX registry through your editor
 
 If you downloaded a `.vsix` file directly (e.g., for offline installation), you can verify its integrity using the published checksum.
 
-### Step 1: Download the Checksum
+### Step 1: Find the Checksum
 
-Checksums are published alongside each release at:
+Checksums are published in this repository at:
 
 ```
-https://github.com/hic-ai-inc/mouse/releases/tag/vX.Y.Z
+https://github.com/hic-ai-inc/mouse/tree/main/checksums
 ```
 
-Download the `checksums.sha256` file from the release assets.
+Each version has two checksum files: `vX.Y.Z.marketplace.sha256` (VS Code Marketplace) and `vX.Y.Z.openvsx.sha256` (Open VSX).
 
 ### Step 2: Compute the Local Checksum
 
@@ -42,16 +42,11 @@ shasum -a 256 mouse-X.Y.Z.vsix
 Get-FileHash mouse-X.Y.Z.vsix -Algorithm SHA256
 ```
 
-## Method 3: SLSA Provenance (Planned)
+### Step 3: Compare
 
-SLSA provenance attestation is not yet available for HIC Mouse releases. GitHub Artifact Attestations (used for SLSA provenance) require GitHub Enterprise Cloud for private repository workflows. Since the Mouse build pipeline runs in a private repository, attestations cannot currently be generated.
+The output hash should exactly match the corresponding line in the checksum file. If it does not match, do not install the file — it may have been tampered with.
 
-We plan to implement attestation in a future release. In the meantime, Methods 1 and 2 above provide strong integrity guarantees:
-
-- **Registry signing** (Method 1) cryptographically verifies that the extension was published by the verified `hic-ai` publisher account
-- **SHA-256 checksums** (Method 2) verify that a directly downloaded `.vsix` file has not been modified since the official build
-
-For details on this limitation, please contact [security@hic-ai.com](mailto:security@hic-ai.com).
+VS Code does not retain the original `.vsix` after installation. To verify an installed version, download the corresponding `.vsix` from the registry and compare that file against the published checksum.
 
 ## Questions?
 

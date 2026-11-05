@@ -60,7 +60,7 @@ Full setup guide: [https://hic-ai.com/docs/installation](https://hic-ai.com/docs
 
 Compatibility depends primarily on the AI client's MCP/tool support, not on the underlying LLM provider. See the full [feature compatibility matrix](https://hic-ai.com/features/) for details.
 
-**Platforms:** Windows, macOS, Linux. Requires Node.js 20+.
+**Platforms:** Windows, macOS, Linux. Requires Node.js 22 LTS or later.
 
 ## Pricing
 

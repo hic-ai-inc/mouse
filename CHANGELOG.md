@@ -6,11 +6,45 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.11.0] - 2026-11-03
+
+### Added
+
+- Support for OpenCode CLI and Codex CLI via Mouse: Initialize Workspace
+
+### Fixed
+
+- Staged readers now return operation/refinement counts and a uniform note in `stagingInfo`
+- `jump_to_line_n` staged responses unified to the full response envelope with breadcrumbs
+- `find_in_file` state is now truthful per call; search views slimmed to count-and-location summaries
+- `columnAnalysis` now included in structured output for `showColumns` searches
+- Path errors unified: identical codes and messages across tools; authorization precedes argument validation; caller-supplied paths are never echoed
+- Percent-encoded NUL rejected at the path gate; editors fail closed on missing validator
+- One canonical path validator and staging identity (symlink-safe); staged content flushes with FILE_NOT_FOUND when the target file is deleted
+- MCP protocol integrity: no plaintext diagnostics on JSON-RPC stdout; server version derived from package.json
+- Deprecated ModeManager and dead code removed from the production bundle
+- Agent identity unified under `HIC_AGENT_ADAPTER` (no silent fallbacks)
+- Replaces affecting multiple matches now stage for review instead of writing to disk silently
+- Reason threading made consume-once; stale reasons no longer appear on later calls; `save_changes` lists per-edit reasons in order and no longer duplicates the reason field
+- Response deduplication: file summaries, paths, suggestions, and actions appear once per response
+- Refinement banner now reports cumulative staged-edit counts
+- Column discovery tip is deterministic and appears only on columnar content
+- Ranged views no longer drop the first line (double-slice)
+- CRLF artifacts removed from staged search results
+- Config reads fail closed: malformed or unreadable client configs abort initialization without being overwritten
+- ADJUST accepts nested array, JSON string, single-element string array, and split-string rect forms; batch_quick_edit accepts rect+move operations
+- Rect semantics documented: search for column content, not delimiters
+- Removed write-only `contentPreserved` field; relocate notes now direct agents to check staged changes
+
+
 ## [0.10.39] - 2026-07-07
 
 ### Changed
 
-- - Fix: find_in_file limit=0 now correctly treated as unlimited (capped at internal safety max) instead of erroring\n- Fix: Compact coordinate syntax (region, lineRange, colRange) now auto-normalizes string values to integers\n- Fix: Removed false 25-line cap language from read_lines, read_first_n_lines, and read_last_n_lines tool descriptions\n- Refactor: Removed stale version-history comments, empty section banners, and dead metadata for pruned tools from tool-metadata.js (-309 lines)
+- Fix: find_in_file limit=0 now correctly treated as unlimited (capped at internal safety max) instead of erroring
+- Fix: Compact coordinate syntax (region, lineRange, colRange) now auto-normalizes string values to integers
+- Fix: Removed false 25-line cap language from read_lines, read_first_n_lines, and read_last_n_lines tool descriptions
+- Refactor: Removed stale version-history comments, empty section banners, and dead metadata for pruned tools from tool-metadata.js (-309 lines)
 
 
 ## [0.10.38] - 2026-04-30
